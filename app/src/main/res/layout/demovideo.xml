@@ -39,7 +39,13 @@
         android:textColor="#FFFFFF"
         android:visibility="gone"/>
 
-
+    <ImageView
+        android:id="@+id/scroll"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:scaleType = "centerInside"/>
 
 
     <ImageView

@@ -46,9 +46,9 @@ public class MainActivity extends AppCompatActivity implements VideoAdapter.List
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
 
             // 最后一个完全可见项的位置
-            private int lastCompletelyVisibleItemPosition;
+         private int lastCompletelyVisibleItemPosition;
 
-            @Override
+         @Override
             public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
                 RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();

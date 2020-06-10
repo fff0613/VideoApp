@@ -83,6 +83,7 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView zanheart;
     private int islike = 0;
 
+
     @SuppressLint("ClickableViewAccessibility")
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -142,7 +143,7 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
             }
         };
 
-        //更新一下进度条
+        //每隔1秒更新进度条
         mExecutorService = new ScheduledThreadPoolExecutor(1);
         mExecutorService.scheduleAtFixedRate(new Runnable() {
             @Override
@@ -286,6 +287,8 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
                             // TODO 快进
                             int currentT = player.getCurrentPosition();//播放的位置
                             player.seekTo(currentT + 1000);
+                            tv_start.setText(toTime(currentT + 1000));
+                            seekBar.setProgress(currentT + 1000);
                             downX = event.getX();
                             downY = event.getY();
                         }
@@ -295,6 +298,8 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
                             // TODO 快退
                             int currentT = player.getCurrentPosition();
                             player.seekTo(currentT - 1000);
+                            tv_start.setText(toTime(currentT - 1000));
+                            seekBar.setProgress(currentT - 1000);
                             downX = event.getX();
                             downY = event.getY();
                         }
@@ -303,6 +308,8 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
                 return true;
             }
         });
+
+
     }
 
 
